@@ -1,0 +1,77 @@
+.navbar{
+    display: inline-flex;
+justify-content: space-around;
+align-items: center;
+gap: 550px;
+
+background: rgba(35, 57, 66, 0.50);
+width: 100%;
+padding-bottom: 10px;
+}
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.button svg{
+    position: absolute;
+}
+.button button{
+color: #898D92;
+font-family: Lato;
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+text-transform: capitalize;
+width: 200px;
+height: 50px;
+background: none;
+border: none;
+outline: none;
+}
+
+@media (max-width:780px){
+    .navbar{
+        gap:250px
+    }
+}
+
+@media (max-width:620px){
+    .navbar{
+        gap: 30px;
+        width: 100%;
+        padding: 0;
+    }
+    .button{transform: scale(0.8);}
+    .navbar img{
+        transform: scale(0.8);
+    }
+}
+@media (max-width:500px){
+    .button{
+        transform: scale(0.7);
+    }
+    .navbar img{
+        transform: scale(0.65);
+    }
+    .navbar{
+        margin: 0;
+    }
+}
+
+@media (max-width:346px){
+    .navbar{
+        gap: 0;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .navbar img{
+        transform: scale(0.6);
+    }
+    .button{
+        transform: scale(0.6);
+    }
+}
