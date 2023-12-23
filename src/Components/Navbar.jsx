@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "./Assets/Logo.png";
+
 import { FaBars, FaTimes } from "react-icons/fa";
 function Navbar() {
   const [nav, setNav] = useState(false);
@@ -9,9 +9,13 @@ function Navbar() {
     { id: 3, link: "Why Us" },
   ];
   return (
-    <div className="flex  justify-between items-center h-20 w-full sticky top-0 bg-black text-white px-5 z-10">
+    <div className="flex  justify-between items-center h-20 w-full sticky top-0 bg-black text-white px-5 z-10 font-DM">
       <div className="font-signature text-4xl m-2 z-20">
-        <img src={logo} alt="logo" width="75" />
+        <img
+          src="https://res.cloudinary.com/dggryzgok/image/upload/v1703352695/Krishna%20Photography/zjru4aqjytie4yhyvz40.png"
+          alt="logo"
+          width="75"
+        />
       </div>
       <div className="flex gap-5 items-center justify-center">
         <ul className="hidden md:flex gap-20">
@@ -26,7 +30,12 @@ function Navbar() {
             );
           })}
         </ul>
-        <button className="overflow-hidden relative w-32 p-2 h-12 bg-black text-white border-none rounded-md text-xl font-bold cursor-pointer relative z-10 group">
+        <button
+          className="overflow-hidden relative w-32 p-2 h-12 bg-black text-white border-none rounded-md text-xl font-bold cursor-pointer relative z-10 group"
+          onClick={() => {
+            "tel:+919618634914";
+          }}
+        >
           Contact
           <span className="absolute w-36 h-32 -top-8 -left-2 bg-yellow-200 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-bottom"></span>
           <span className="absolute w-36 h-32 -top-8 -left-2 bg-yellow-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-bottom"></span>

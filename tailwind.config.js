@@ -5,6 +5,8 @@ module.exports = {
     extend: {},
     fontFamily: {
       monstreaat: ["Montserrat"],
+      Cormorant: ["Cormorant"],
+      DM: ["DM Sans"],
     },
   },
   plugins: [],
