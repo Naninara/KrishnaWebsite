@@ -1,6 +1,7 @@
 import React from "react";
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 import { FaMapLocationDot } from "react-icons/fa6";
+import { Link } from "react-scroll";
 function Footer() {
   const socialLink = [
     { icon: <FaWhatsapp size={30} />, link: "https://wa.me/+918074187798" },
@@ -45,9 +46,40 @@ function Footer() {
         <div className="hidden md:block">
           <p className="mb-[5px] text-center text-white">Quick Links</p>
           <ul className="text-center text-white">
-            <li>Home</li>
-            <li>Gallery</li>
-            <li>Conatct</li>
+            <li>
+              <Link
+                className=" cursor-pointer"
+                to="home"
+                smooth
+                delay={0.5}
+                offset={-450}
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                className=" cursor-pointer"
+                to="gallery"
+                smooth
+                delay={0.5}
+                offset={-450}
+              >
+                Gallery
+              </Link>
+            </li>
+            <li>
+              {" "}
+              <Link
+                className=" cursor-pointer"
+                to="contact"
+                smooth
+                delay={0.5}
+                offset={-450}
+              >
+                Contact
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

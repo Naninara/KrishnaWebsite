@@ -40,7 +40,7 @@ function Corousal() {
           {images.map((ele, index) => {
             return (
               <>
-                <img src={ele} alt="photoshoot" />
+                <img src={ele} alt="photoshoot" loading="lazy" />
               </>
             );
           })}

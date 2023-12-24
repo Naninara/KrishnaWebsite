@@ -28,7 +28,7 @@ function Navbar() {
                 key={ele.id}
                 className="capitalize cursor-pointer hover:scale-125 duration-200"
               >
-                <Link to={ele.link} smooth>
+                <Link to={ele.link} smooth={true} delay={0.5} offset={-500}>
                   {" "}
                   {ele.link}
                 </Link>

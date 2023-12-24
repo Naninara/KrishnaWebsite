@@ -1,19 +1,41 @@
 import "./App.css";
-import Navbar from "./Components/Navbar";
-import HeroSection from "./Components/HeroSection";
-import Gallery from "./Components/Gallery";
-import Corousal from "./Components/Corousal";
-import Contact from "./Components/Contact";
-import Footer from "./Components/Footer";
+
+import React, { Suspense } from "react";
+
+import { ErrorBoundary } from "react-error-boundary";
+import ErrorBoundaryFallBack from "./Components/ErrorBoundaryFallBack";
+import Loader from "./Components/Loader";
+const HeroSection = React.lazy(() => import("./Components/HeroSection"));
+const Navbar = React.lazy(() => import("./Components/Navbar"));
+const Contact = React.lazy(() => import("./Components/Contact"));
+const Footer = React.lazy(() => import("./Components/Footer"));
+
+const Gallery = React.lazy(() => import("./Components/Gallery"));
+const Corousal = React.lazy(() => import("./Components/Corousal"));
+
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <HeroSection />
-      <Corousal />
-      <Gallery />
-      <Contact />
-      <Footer />
+      <ErrorBoundary
+        fallback={<ErrorBoundaryFallBack />}
+        onReset={() => {
+          window.location.reload();
+        }}
+      >
+        <Suspense fallback={<Loader />}>
+          <Navbar />
+
+          <HeroSection />
+
+          <Corousal />
+
+          <Gallery />
+
+          <Contact />
+
+          <Footer />
+        </Suspense>
+      </ErrorBoundary>
     </div>
   );
 }
