@@ -11,7 +11,6 @@ function Corousal() {
     "https://res.cloudinary.com/dggryzgok/image/upload/v1703351546/Krishna%20Photography/bg6qrs35wgdzcokur9zl.jpg",
     "https://res.cloudinary.com/dggryzgok/image/upload/v1703351546/Krishna%20Photography/iwwvdpykg5avkbomeui8.jpg",
     "https://res.cloudinary.com/dggryzgok/image/upload/v1703351546/Krishna%20Photography/lvaqtztwdlsciz8meajy.jpg",
-    "https://res.cloudinary.com/dggryzgok/image/upload/v1703351546/Krishna%20Photography/lvaqtztwdlsciz8meajy.jpg",
     "https://res.cloudinary.com/dggryzgok/image/upload/v1703351546/Krishna%20Photography/mem9vsoqjk8askshvgzj.jpg",
   ];
   const [slide, setSlide] = useState(0);
@@ -25,6 +24,14 @@ function Corousal() {
 
   return (
     <>
+      <div className="bg-black flex-col  font-Dm text-white  font-DM flex w-full items-center justify-center pb-5  pt-5  md:flex-row ">
+        <h1
+          name="gallery"
+          className="mb-4 text-5xl tracking-tight font-normal text-center text-gray-900 dark:text-white p-2md:border-b-2"
+        >
+          Gallery And Our Services{" "}
+        </h1>
+      </div>
       <div className=" group flex overflow-hidden  w-auto h-auto justify-center items-center relative lg:h-screen ">
         <div
           className="flex  transition-transform ease-out duration-1000 cursor-pointer relative"

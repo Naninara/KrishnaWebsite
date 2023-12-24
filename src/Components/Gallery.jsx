@@ -1,5 +1,5 @@
+import { motion } from "framer-motion";
 import React from "react";
-
 function Gallery() {
   const data = [
     {
@@ -25,20 +25,30 @@ function Gallery() {
     },
   ];
   return (
-    <div>
+    <div className="overflow-hidden">
       {data.map((ele, index) => {
         return (
           <div
             className="h-auto w-full  flex  bg-black flex-col md:flex-row font-DM"
             key={index}
           >
-            <div className="flex justify-center items-center p-10  w-full md:w-1/2">
+            <motion.div
+              className="flex justify-center items-center p-10  w-full md:w-1/2 "
+              initial={{ x: -100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.7 }}
+            >
               <img src={ele.img} alt="wedding" />
-            </div>
-            <div className="flex justify-center items-center text-white flex-col gap-5 w-full md:w-1/2">
+            </motion.div>
+            <motion.div
+              className="flex justify-center items-center text-white flex-col gap-5 w-full md:w-1/2 overflow-auto"
+              initial={{ x: 100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.7 }}
+            >
               <h1 className=" text-xl font-normal md:text-5xl">{ele.name}</h1>
               <h2 className=" text-center">{ele.subtext}</h2>
-            </div>
+            </motion.div>
           </div>
         );
       })}

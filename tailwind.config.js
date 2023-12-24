@@ -4,9 +4,9 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      monstreaat: ["Montserrat"],
       Cormorant: ["Cormorant"],
       DM: ["DM Sans"],
+      Rubik: ["Rubik Doodle Shadow"],
     },
   },
   plugins: [],

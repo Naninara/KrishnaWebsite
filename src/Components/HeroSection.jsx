@@ -1,10 +1,14 @@
+import { motion } from "framer-motion";
 import React from "react";
-
 function HeroSection() {
   return (
-    <div
+    <motion.div
       className="flex flex-col bg-black h-screen
       w-full justify-evenly pt-4 items-center md:flex-row md:pb-40 "
+      name="home"
+      initial={{ opacity: 0, y: -100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
     >
       <div className=" text-white  text-5xl flex flex-col  items-center font-DM font-normal w-1/3 gap-2">
         <h1>Krishna</h1>
@@ -23,7 +27,7 @@ function HeroSection() {
           through Lens.
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

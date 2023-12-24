@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 
 import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-scroll";
+import { MdPhone } from "react-icons/md";
+
 function Navbar() {
   const [nav, setNav] = useState(false);
   const array = [
     { id: 1, link: "home" },
-    { id: 2, link: "Gallery" },
-    { id: 3, link: "Why Us" },
+    { id: 2, link: "gallery" },
+    { id: 3, link: "contact" },
   ];
   return (
     <div className="flex  justify-between items-center h-20 w-full sticky top-0 bg-black text-white px-5 z-10 font-DM">
@@ -25,18 +28,21 @@ function Navbar() {
                 key={ele.id}
                 className="capitalize cursor-pointer hover:scale-125 duration-200"
               >
-                {ele.link}
+                <Link to={ele.link} smooth>
+                  {" "}
+                  {ele.link}
+                </Link>
               </li>
             );
           })}
         </ul>
         <button
-          className="overflow-hidden relative w-32 p-2 h-12 bg-black text-white border-none rounded-md text-xl font-bold cursor-pointer relative z-10 group"
+          className=" flex items-center gap-2 overflow-hidden relative w-32 p-2 h-12 bg-black text-white border-none rounded-md text-xl font-bold cursor-pointer relative z-10 group"
           onClick={() => {
-            "tel:+919618634914";
+            window.location.href = "tel:+918074187798";
           }}
         >
-          Contact
+          Call Me <MdPhone />
           <span className="absolute w-36 h-32 -top-8 -left-2 bg-yellow-200 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-bottom"></span>
           <span className="absolute w-36 h-32 -top-8 -left-2 bg-yellow-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-bottom"></span>
           <span className="absolute w-36 h-32 -top-8 -left-2  bg-green-800 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-bottom"></span>
@@ -61,7 +67,16 @@ function Navbar() {
                 key={ele.id}
                 className="capitalize hover:scale-125 duration-200 z-20"
               >
-                {ele.link}
+                <Link
+                  to={ele.link}
+                  smooth
+                  onClick={() => {
+                    setNav(false);
+                  }}
+                >
+                  {" "}
+                  {ele.link}
+                </Link>
               </li>
             );
           })}
