@@ -28,8 +28,9 @@ function App() {
           <HeroSection />
 
           <Corousal />
-
-          <Gallery />
+          <Suspense fallback={<Loader />}>
+            <Gallery />
+          </Suspense>
 
           <Contact />
 
